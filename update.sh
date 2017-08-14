@@ -10,7 +10,7 @@ plain='\033[0m'
 [[ $EUID -ne 0 ]] && echo -e "${red}Error:${plain} This script must be run as root!" && exit 1
 
 
-DATE=`date`
+DATE=`date +%Y%m%d%H%M%S`
 
 # backup orignal hosts at first time
 if [ ! -f "/etc/hosts.origin" ]; then
@@ -41,6 +41,9 @@ cat gfwfuck/hosts >> /etc/hosts
 if [ -f "dev.hosts" ]; then
   cat dev.hosts >> /etc/hosts
 fi
+
+# remove 30 days ago backup files
+find ./backup -mtime +30 -type f -delete
 
 service dnsmasq restart
 echo "updated at "$DATE >> update_hosts.log
