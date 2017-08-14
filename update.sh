@@ -26,7 +26,7 @@ fi
 echo "" > /etc/hosts
 
 # for google, wiki, etc.
-if [ ! -d "gfwfuck" ]; then
+if [ -d "gfwfuck" ]; then
   cd gfwfuck
   git pull
   cd ..
