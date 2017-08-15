@@ -31,7 +31,9 @@ if [ -d "gfwfuck" ]; then
   git pull
   cd ..
 else
-  git clone https://github.com/racaljk/hosts gfwfuck
+   # git clone https://github.com/racaljk/hosts gfwfuck
+   # wangchunming is good
+   git clone https://github.com/wangchunming/2017hosts gfwfuck
 fi
 
 # append gfwfuck host to hosts
