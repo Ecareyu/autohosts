@@ -37,7 +37,7 @@ else
 fi
 
 # append gfwfuck host to hosts
-cat gfwfuck/hosts >> /etc/hosts
+cat gfwfuck/hosts-pc >> /etc/hosts
 
 # append dev hosts to hosts
 if [ -f "dev.hosts" ]; then
